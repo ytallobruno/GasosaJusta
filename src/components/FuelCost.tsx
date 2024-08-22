@@ -1,45 +1,55 @@
-import { Component } from "react";
+import { Text } from "@chakra-ui/react";
 
 interface FuelCostProps {
   distance: number;
   consume: number;
   price: number;
   people: number;
-  toll: boolean;
+  hasToll: boolean;
   tollValue: number;
 }
 
-interface FuelCostState {
-  distance: number;
-  consume: number;
-  price: number;
-  people: number;
-}
+export default function FuelCost({
+  distance,
+  consume,
+  price,
+  people,
+  hasToll,
+  tollValue,
+}: FuelCostProps) {
+  const calculateFuelCost = (
+    distance: number,
+    consume: number,
+    price: number
+  ): number => {
+    return (distance / consume) * price;
+  };
 
-export default class FuelCost extends Component<FuelCostProps, FuelCostState> {
-  getTotalFuelCost = () => {
-    const { distance, consume, price, toll, tollValue } = this.props;
-    let totalCost = (distance / consume) * price;
-    if (toll) {
+  const getTotalFuelCost = (): number => {
+    let totalCost = calculateFuelCost(distance, consume, price);
+
+    if (hasToll) {
       totalCost += tollValue;
     }
     return totalCost;
   };
 
-  calculateCostPerPerson = () => {
-    const { people } = this.props;
-    const totalFuelCost = this.getTotalFuelCost();
+  const calculateCostPerPerson = (): number => {
+    const totalFuelCost = getTotalFuelCost();
     return totalFuelCost / people;
   };
 
-  render() {
-    const totalFuelCost = this.getTotalFuelCost().toFixed(2);
-    const costPerPerson = this.calculateCostPerPerson().toFixed(2);
-    return (
-      <>
-        <div>O custo total da viagem foi R$ {totalFuelCost}.</div>
-        <div>O gasto por pessoa será de R$ {costPerPerson}.</div>
-      </>
-    );
-  }
+  const totalFuelCost = getTotalFuelCost().toFixed(2);
+  const costPerPerson = calculateCostPerPerson().toFixed(2);
+
+  return (
+    <>
+      <Text>
+        O custo total da viagem foi <Text as="b">R$ {totalFuelCost}</Text>.
+      </Text>
+      <Text>
+        O gasto por pessoa será de <Text as="b">R$ {costPerPerson}</Text>.
+      </Text>
+    </>
+  );
 }
