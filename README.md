@@ -15,7 +15,7 @@ Este projeto foi um desafio durante o Calindra Programa onde deveriamos implemen
 
 <h2 id="andamento">Andamento do projeto 📈</h2>
 
-> ![Badge](https://img.shields.io/website?down_message=em%20andamento&label=STATUS&style=for-the-badge&up_message=conclu%C3%ADdo&url=https://em-andamento)
+> ![Badge](https://img.shields.io/website?down_message=em%20andamento&label=STATUS&style=for-the-badge&up_message=conclu%C3%ADdo&url=https://gasosajusta.netlify.app/)
 >
 > Para visualizar meu projeto, <a href="https://"> **clique aqui**</a>.
 
@@ -32,6 +32,10 @@ Utilizei as seguintes ferramentas em meu projeto:
 
 ```json
   "dependencies": {
+    "@chakra-ui/react": "2.8.2",
+    "@emotion/react": "11.13.3",
+    "@emotion/styled": "11.13.0",
+    "framer-motion": "11.3.29",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
