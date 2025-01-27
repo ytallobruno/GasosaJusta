@@ -9,15 +9,14 @@
 
 ## Descrição da aplicação:
 
-Projeto feito com a intenção de usar o gasto por pessoa da gasolina para uma viagem, roles e afins.
-
+Projeto feito com a intenção de calcular o gasto por pessoa da gasolina para uma viagem, role e afins, contando também com valores de pedágio.
 <br>
 
 <h2 id="andamento">Andamento do projeto 📈</h2>
 
 > ![Badge](https://img.shields.io/website?down_message=em%20andamento&label=STATUS&style=for-the-badge&up_message=conclu%C3%ADdo&url=https://gasosajusta.netlify.app/)
 >
-> Para visualizar meu projeto, <a href="https://"> **clique aqui**</a>.
+> Para visualizar meu projeto, <a href="https://gasosajusta.netlify.app/"> **clique aqui**</a>.
 
 <br>
 
