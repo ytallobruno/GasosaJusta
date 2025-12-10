@@ -1,12 +1,12 @@
-import type { Metadata } from 'next';
-import { Providers } from './providers';
-import './globals.css';
+import type { Metadata } from "next";
+import "./globals.css";
 
 export const metadata: Metadata = {
-  title: 'Gasosa Justa',
-  description: 'Calcule o custo de gasolina por pessoa em viagens',
+  title: "Gasosa Justa",
+  description:
+    "Calcule o custo de gasolina por pessoa em viagens de forma divertida!",
   icons: {
-    icon: '/icon.png',
+    icon: "/icon.png",
   },
 };
 
@@ -17,9 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
-      <body style={{ margin: 0, padding: 0, backgroundColor: 'orange', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <Providers>{children}</Providers>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
