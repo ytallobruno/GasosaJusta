@@ -4,7 +4,7 @@
   <a href="#andamento">Andamento</a>&nbsp;&nbsp;
   <a href="#ferramentas">Ferramentas Utilizadas</a>&nbsp;&nbsp;
   <a href="#contribuir">Como contribuir</a>&nbsp;&nbsp;
-  <a href="#react">REACT</a>&nbsp;&nbsp;
+  <a href="#nextjs">Next.js</a>&nbsp;&nbsp;
 </div>
 
 ## Descrição da aplicação:
@@ -24,30 +24,28 @@ Projeto feito com a intenção de calcular o gasto por pessoa da gasolina para u
 
 Utilizei as seguintes ferramentas em meu projeto:
 
-- Typescript
-- React (Vite)
+- TypeScript
+- Next.js 14 (App Router)
 - Deploy: Netlify
 - Além de dependências como:
 
 ```json
   "dependencies": {
+    "@chakra-ui/next-js": "^2.2.0",
     "@chakra-ui/react": "2.8.2",
     "@emotion/react": "11.13.3",
     "@emotion/styled": "11.13.0",
     "framer-motion": "11.3.29",
+    "next": "^14.2.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@eslint/js": "^9.9.0",
+    "@types/node": "^20",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
-    "@vitejs/plugin-react": "^4.3.1",
-    "eslint": "^9.9.0",
-    "eslint-plugin-react-hooks": "^5.1.0-rc.0",
-    "eslint-plugin-react-refresh": "^0.4.9",
-    "globals": "^15.9.0",
-    "typescript": "^5.5.3",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^14.2.0",
     "typescript-eslint": "^8.0.1",
     "vite": "^5.4.1"
   }

@@ -1,3 +1,5 @@
+"use client";
+
 import { Button, ButtonGroup } from "@chakra-ui/button";
 import { FormControl, FormLabel } from "@chakra-ui/form-control";
 import {
@@ -6,16 +8,16 @@ import {
   InputLeftAddon,
   InputRightAddon,
 } from "@chakra-ui/input";
-import { Stack } from "@chakra-ui/layout";
+import { Stack, Box } from "@chakra-ui/layout";
 import React, { useState } from "react";
-import FuelCost from "../components/FuelCost";
 import { HStack, Switch } from "@chakra-ui/react";
-import { GasFormDetails } from "../types/GasFormDetails.interface";
+import { GasFormDetails } from "@/types/GasFormDetails.interface";
 import {
   formatInputValue,
   handleEmptyInput,
   parseFloatWithComma,
-} from "../utils/helpers";
+} from "@/lib/helpers";
+import FuelCost from "./FuelCost";
 
 const gasFormDefaultValues: GasFormDetails = {
   mainDetails: {
@@ -162,7 +164,7 @@ export default function GasForm(): React.ReactElement {
   } = state;
 
   return (
-    <>
+    <Box className="gasForm">
       <FormControl>
         <Stack>
           <FormLabel>Distância da viagem</FormLabel>
@@ -269,6 +271,6 @@ export default function GasForm(): React.ReactElement {
           tollValue={tollValue}
         />
       )}
-    </>
+    </Box>
   );
 }
