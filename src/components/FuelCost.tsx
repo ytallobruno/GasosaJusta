@@ -2,6 +2,8 @@
 
 import { motion } from 'framer-motion';
 
+import { getTotalFuelCost, calculateCostPerPerson } from '@/lib/calculations';
+
 interface FuelCostProps {
     distance: number;
     consume: number;
@@ -12,68 +14,24 @@ interface FuelCostProps {
 }
 
 export default function FuelCost({ distance, consume, price, people, hasToll, tollValue }: FuelCostProps) {
-    const calculateFuelCost = (distance: number, consume: number, price: number): number => {
-        return (distance / consume) * price;
-    };
-
-    const getTotalFuelCost = (): number => {
-        let totalCost = calculateFuelCost(distance, consume, price);
-
-        if (hasToll) {
-            totalCost += tollValue;
-        }
-        return totalCost;
-    };
-
-    const calculateCostPerPerson = (): number => {
-        const totalFuelCost = getTotalFuelCost();
-        return totalFuelCost / people;
-    };
-
-    const totalFuelCost = getTotalFuelCost().toFixed(2);
-    const costPerPerson = calculateCostPerPerson().toFixed(2);
+    const totalFuelCost = getTotalFuelCost(distance, consume, price, hasToll, tollValue).toFixed(2);
+    const costPerPerson = calculateCostPerPerson(distance, consume, price, people, hasToll, tollValue).toFixed(2);
 
     return (
         <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: 'easeOut' }}
-            className="mt-8 border-t-2 border-border pt-8"
+            transition={{ duration: 0.3, ease: 'easeOut' }}
+            className="mt-8 border-t-[3px] border-black pt-8"
         >
-            <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4, delay: 0.1, ease: 'easeOut' }}
-                whileHover={{ x: 4, borderColor: 'rgba(255, 107, 53, 0.4)' }}
-                className="mb-4 rounded-xl border border-primary/20 bg-gradient-result p-5 transition-all duration-300 hover:shadow-lg"
-            >
-                <p className="mb-1 text-sm font-medium text-text-secondary">Custo total da viagem</p>
-                <motion.p
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.3, delay: 0.3, ease: 'easeOut' }}
-                    className="text-2xl font-bold tracking-tight text-primary"
-                >
-                    R$ {totalFuelCost}
-                </motion.p>
-            </motion.div>
-            <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4, delay: 0.2, ease: 'easeOut' }}
-                whileHover={{ x: 4, borderColor: 'rgba(255, 107, 53, 0.4)' }}
-                className="rounded-xl border border-primary/20 bg-gradient-result p-5 transition-all duration-300 hover:shadow-lg"
-            >
-                <p className="mb-1 text-sm font-medium text-text-secondary">Valor por pessoa</p>
-                <motion.p
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.3, delay: 0.4, ease: 'easeOut' }}
-                    className="text-2xl font-bold tracking-tight text-primary"
-                >
-                    R$ {costPerPerson}
-                </motion.p>
-            </motion.div>
+            <div className="neo-border neo-shadow mb-4 bg-retro-yellow p-6 transition-all hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
+                <p className="mb-2 text-sm font-bold uppercase tracking-wider text-black">Custo total da viagem</p>
+                <p className="text-4xl font-bold tracking-tight text-black">R$ {totalFuelCost}</p>
+            </div>
+            <div className="neo-border neo-shadow bg-retro-blue p-6 transition-all hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
+                <p className="mb-2 text-sm font-bold uppercase tracking-wider text-black">Valor por pessoa</p>
+                <p className="text-4xl font-bold tracking-tight text-black">R$ {costPerPerson}</p>
+            </div>
         </motion.div>
     );
 }

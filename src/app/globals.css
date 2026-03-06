@@ -9,18 +9,11 @@
     font-size: 100%;
     vertical-align: baseline;
     box-sizing: border-box;
-    scroll-behavior: smooth;
 }
 
 :root {
-    font-family:
-        'Inter',
-        -apple-system,
-        BlinkMacSystemFont,
-        'Segoe UI',
-        system-ui,
-        sans-serif;
-    line-height: 1.6;
+    --font-retro: 'Space Mono', monospace, sans-serif;
+    line-height: 1.5;
     font-weight: 400;
 }
 
@@ -32,11 +25,35 @@ body {
     margin: 0;
     padding: 2rem 1rem;
     min-height: 100vh;
-    background: linear-gradient(135deg, #fff5f0 0%, #ffe8dc 50%, #ffd4c0 100%);
-    background-attachment: fixed;
+    /* Fundo de cor cremosa/giz com padrão opcional, usando cor sólida por enquanto */
+    background-color: #f4f0ec;
+    background-image: radial-gradient(#d5cdc4 1px, transparent 1px);
+    background-size: 20px 20px;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: var(--font-retro);
+    color: #000;
+}
+
+/* Base custom classes para neo-brutalismo */
+.neo-border {
+    border: 3px solid #000;
+}
+
+.neo-shadow {
+    box-shadow: 4px 4px 0px 0px #000000;
+    transition: all 0.15s ease-out;
+}
+
+.neo-shadow:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 5px 5px 0px 0px #000000;
+}
+
+.neo-shadow:active {
+    transform: translate(3px, 3px);
+    box-shadow: 1px 1px 0px 0px #000000;
 }
 
 @media (max-width: 640px) {

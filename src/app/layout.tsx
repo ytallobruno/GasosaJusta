@@ -1,5 +1,12 @@
 import type { Metadata } from 'next';
+import { Space_Mono } from 'next/font/google';
 import './globals.css';
+
+const spaceMono = Space_Mono({
+    subsets: ['latin'],
+    weight: ['400', '700'],
+    variable: '--font-retro',
+});
 
 export const metadata: Metadata = {
     title: 'Gasosa Justa',
@@ -11,7 +18,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
-        <html lang="pt-br">
+        <html lang="pt-br" className={spaceMono.variable}>
             <body>{children}</body>
         </html>
     );

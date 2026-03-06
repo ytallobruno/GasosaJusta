@@ -10,53 +10,44 @@ const config: Config = {
         extend: {
             colors: {
                 primary: {
-                    DEFAULT: '#ff6b35',
-                    light: '#ff8c5f',
-                    dark: '#e55a2b',
+                    DEFAULT: '#ff5a00', // Laranja vibrante retro
+                    light: '#ff8a4c',
+                    dark: '#cc4800',
+                },
+                retro: {
+                    yellow: '#ffde00',
+                    green: '#00d084',
+                    blue: '#00c3ff',
+                    pink: '#ff007f',
+                    bg: '#f4f0ec',
                 },
                 text: {
-                    primary: '#2d3748',
-                    secondary: '#718096',
+                    primary: '#000000',
+                    secondary: '#333333',
                 },
                 card: {
                     bg: '#ffffff',
                 },
                 border: {
-                    DEFAULT: '#e2e8f0',
+                    DEFAULT: '#000000',
                 },
             },
-            backgroundImage: {
-                'gradient-main': 'linear-gradient(135deg, #f5f7fa 0%, #e4e9f2 100%)',
-                'gradient-result': 'linear-gradient(135deg, #fff5f0 0%, #ffe8dc 100%)',
+            fontFamily: {
+                mono: ['Space Mono', 'monospace'],
+                sans: ['Space Mono', 'sans-serif'],
             },
             boxShadow: {
-                card: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-                'card-lg': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
-                'button-hover': '0 4px 12px rgba(255, 107, 53, 0.3)',
-                'button-hover-outline': '0 4px 12px rgba(255, 107, 53, 0.2)',
+                retro: '4px 4px 0px 0px rgba(0,0,0,1)',
+                'retro-sm': '2px 2px 0px 0px rgba(0,0,0,1)',
+                'retro-lg': '8px 8px 0px 0px rgba(0,0,0,1)',
             },
             animation: {
-                fadeIn: 'fadeIn 0.5s ease-out',
-                slideUp: 'slideUp 0.5s ease-out',
-                scaleIn: 'scaleIn 0.4s ease-out',
-                pulse: 'pulse 0.6s ease-in-out',
+                retroPop: 'retroPop 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards',
             },
             keyframes: {
-                fadeIn: {
-                    from: { opacity: '0', transform: 'translateY(10px)' },
-                    to: { opacity: '1', transform: 'translateY(0)' },
-                },
-                slideUp: {
-                    from: { opacity: '0', transform: 'translateY(30px)' },
-                    to: { opacity: '1', transform: 'translateY(0)' },
-                },
-                scaleIn: {
-                    from: { opacity: '0', transform: 'scale(0.95)' },
-                    to: { opacity: '1', transform: 'scale(1)' },
-                },
-                pulse: {
-                    '0%, 100%': { transform: 'scale(1)' },
-                    '50%': { transform: 'scale(1.02)' },
+                retroPop: {
+                    '0%': { transform: 'scale(0.9)', opacity: '0' },
+                    '100%': { transform: 'scale(1)', opacity: '1' },
                 },
             },
         },
