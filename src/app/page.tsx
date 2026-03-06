@@ -1,5 +1,5 @@
-import GasForm from "@/components/GasForm";
+import GasForm from '@/components/GasForm';
 
 export default function Home() {
-  return <GasForm />;
+    return <GasForm />;
 }

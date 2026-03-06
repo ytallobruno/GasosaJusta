@@ -1,0 +1,26 @@
+# Ignore node_modules
+node_modules/
+
+# Ignore build outputs
+.next/
+out/
+build/
+dist/
+
+# Ignore coverage
+coverage/
+
+# Ignore public assets
+public/
+
+# Ignore lock files (optional but common)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# Configuration files that shouldn't be formatted
+.prettierrc
+# .eslintrc.json
+
+# Markdown files (optional)
+# *.md

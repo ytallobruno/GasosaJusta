@@ -3,39 +3,44 @@
 @tailwind utilities;
 
 * {
-  margin: 0;
-  padding: 0;
-  outline: 0;
-  font-size: 100%;
-  vertical-align: baseline;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 :root {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui,
-    sans-serif;
-  line-height: 1.6;
-  font-weight: 400;
+    font-family:
+        'Inter',
+        -apple-system,
+        BlinkMacSystemFont,
+        'Segoe UI',
+        system-ui,
+        sans-serif;
+    line-height: 1.6;
+    font-weight: 400;
 }
 
 html {
-  height: 100%;
+    height: 100%;
 }
 
 body {
-  margin: 0;
-  padding: 2rem 1rem;
-  min-height: 100vh;
-  background: linear-gradient(135deg, #fff5f0 0%, #ffe8dc 50%, #ffd4c0 100%);
-  background-attachment: fixed;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    margin: 0;
+    padding: 2rem 1rem;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #fff5f0 0%, #ffe8dc 50%, #ffd4c0 100%);
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 @media (max-width: 640px) {
-  body {
-    padding: 1rem;
-  }
+    body {
+        padding: 1rem;
+    }
 }
