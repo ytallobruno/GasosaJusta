@@ -2,8 +2,8 @@
 
 import React, { useRef, useEffect } from 'react';
 import FuelCost from './FuelCost';
-import Switch from './ui/Switch';
-import { useGasForm } from '@/hooks/useGasForm';
+import Switch from '@/ui/Switch';
+import { useGasForm } from '@/features/trip/hooks/useGasForm';
 
 export default function GasForm(): React.ReactElement {
     const {

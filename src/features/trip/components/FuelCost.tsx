@@ -1,8 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-
-import { getTotalFuelCost, calculateCostPerPerson } from '@/lib/calculations';
+import { getTotalFuelCost, calculateCostPerPerson } from '@/features/calc/services/fuelCalculator';
 
 interface FuelCostProps {
     distance: number;

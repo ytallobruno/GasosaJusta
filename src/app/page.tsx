@@ -1,4 +1,4 @@
-import GasForm from '@/components/GasForm';
+import GasForm from '@/features/trip/components/GasForm';
 
 export default function Home() {
     return <GasForm />;

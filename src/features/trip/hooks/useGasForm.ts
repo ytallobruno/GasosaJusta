@@ -1,6 +1,8 @@
+'use client';
+
 import { useState } from 'react';
-import { GasFormDetails } from '@/types/GasFormDetails.interface';
-import { formatInputValue, handleEmptyInput, parseFloatWithComma } from '@/lib/helpers';
+import { GasFormDetails } from '@/features/trip/types/trip.types';
+import { formatInputValue, handleEmptyInput, parseFloatWithComma } from '@/lib/formatters';
 
 const gasFormDefaultValues: GasFormDetails = {
     mainDetails: {
